@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,203 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+
+					<img src="img/pgb_logo.png" height=400px />
+					<h2>Adobe PhoneGap Build</h2>
+					<h4>what have you done for me lately?</h4>
+					<p>
+						<small>brett rudd &#9679; @brettrudd &#9679; github.com/goya</small>
+					</p>
+
+				</section>
+
+				<section>
+					<img src="img/short.gif" style="margin:0;border:0;box-shadow:none" height=300px />
+					<h2>short but sweet</h2><span class=fragment>
+					<p class="fragmfent">what is phonegap build</p>
+					<p class="fragmefnt">potentially embarrassing clumsy demo</p>
+					<p class="fragmefnt">new features</p>
+					<p class="fragmefnt">what's next</p></span>
+				</section>
+
+				<section>
+					<h2>What is PhoneGap Build?</h2>
+					<p>PhoneGap Build is an online service that enables you to easily compile PhoneGap applications for iOS, Android and Windows platforms</p>
+					<p class=fragment>No need to install SDKs</p>
+					<p class=fragment>Includes debugging and device testing tools</p>
+					<p class=fragment>Seamlessly* upgrade to the latest PhoneGap versions</p>
+					<p class=fragment>Share and collaborate with testers and other developers</p>
+				</section>
+
+				<section>
+					<h2>Main Features</h2>
+					<p class=fragment>Your source can be uploaded by a zip or a public or private git repo</p>
+					<p class=fragment>Full support for any PhoneGap / Cordova plugin</p>
+					<p class=fragment>Upload private plugins</p>
+					<p class=fragment>A full RESTful api to allow integration with a CI workflow</p>
+					<p class=fragment>Hydration service</p>
+					<p class=fragment>A dedicated weinre server allowing for remote debugging</p>
+				</section>
+
+				<section>
+					<h2>build.phonegap.com/plans</h2>
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>Free</th>
+								<th>Monthly ($10)</th>
+								<th>Creative Cloud</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Open Source Apps</td>
+								<td align=center>&infin;</td>
+								<td align=center>&infin;</td>
+								<td align=center>&infin;</td>
+							</tr>
+							<tr>
+								<td>Private Apps</td>
+								<td align=center>1</td>
+								<td align=center>&infin;</td>
+								<td align=center>&infin;</td>
+							</tr>
+							<tr>
+								<td>App Size</td>
+								<td align=center>50MB</td>
+								<td align=center>100MB</td>
+								<td align=center>1GB</td>
+							</tr>
+							<tr>
+								<td>Plugins</td>
+								<td align=center>YES</td>
+								<td align=center>YES</td>
+								<td align=center>YES</td>
+							</tr>
+							<tr>
+								<td>Upload Plugins</td>
+								<td align=center>NO</td>
+								<td align=center>YES</td>
+								<td align=center>YES</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<img src="img/bored.gif" />
+				</section>
+
+				<section>
+					<h2>Clumsy Demo of Hydration</h2>
+					<p>phonegap/phonegap-app-star-track</p>
+				</section>
+
+				<section>
+					<h2>New Stuff</h2>
+				</section>
+
+				<section>
+					<h2>App Repo Support</h2>
+					<p><img style="background-color:white;padding-left:100px;padding-right:100px" src="img/github.png"/></p>
+					<span class="fragment">
+					<p><img style="background-color:white;padding-left:100px;padding-right:100px" src="img/bitbucket.png"/></p>
+					<p><img style="background-color:white;padding-left:100px;padding-right:100px" src="img/gitlab.png"/></p>
+					</span>
+				</section>
+
+				<section>
+					<h2>npm plugins</h2>
+					<p>plugins.cordova.io</p>
+					<pre class="fragment"><code class="html hljs">
+&lt;plugin src="cordova-plugin-device" /&gt;
+
+&lt;plugin src="cordova-plugin-device" source="npm" /&gt;
+
+&lt;plugin src="cordova-plugin-device" source="npm" spec="1.1.2" /&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>git-based plugins</h2>
+					<span class=fragment>
+					<p>Include any git-based cordova plugin from any public git repository</p>
+					<pre><code class="html hljs">
+&lt;plugin spec="https://github.com/apache/cordova-plugin-device.git" /&gt;
+
+&lt;plugin spec="https://github.com/apache/cordova-plugin-device.git#tag" /&gt;
+&lt;plugin spec="https://bitbucket.com/apache/cordova-plugin-device.git#branch" /&gt;
+&lt;plugin spec="https://my-git-server.com/apache/cordova-plugin-device.git#commit" /&gt;
+					</code></pre></span>
+				</section>
+
+				<section>
+					<h2>Windows Phone 8.1 and Windows 10 Support</h2>
+					<span class=fragment>
+					<pre><code class="html hljs">
+<!-- Windows 10 (default): -->
+&lt;preference name="windows-appx-target" value="uap" />
+
+<!-- Windows 8.1: -->
+&lt;preference name="windows-appx-target" value="8.1-win" />
+
+<!-- Windows Phone 8.1: -->
+&lt;preference name="windows-appx-target" value="8.1-phone" />
+					</code></pre></span>
+					<span class=fragment>
+					<pre><code class="html hljs">
+<!-- anycpu, arm, x86, and x64 -->
+&lt;preference name="windows-arch" value="anycpu" />
+					</code></pre></span>
+				</section>
+
+				<section>
+					<h2>Adobe Forums</h2>
+					<p>Support is now available on the official Adobe forums</p>
+					<img src="img/fetch.gif" />
+					<p>forums.adobe.com/community/phonegap/build</p>
+				</section>
+
+				<section>
+					<h2>Other New Stuff</h2>
+					<span class=fragment><p>Gradle support for android builds</p>
+<pre><code class="html hljs">
+&lt;preference name="android-build-tool" value="gradle" /&gt;
+					</code></pre>
+
+					</span>
+					<span class=fragment><p>Platform specific plugins and preferences</p>
+<pre><code class="html hljs">
+&lt;platform name="android">
+  &lt;preference name="phonegap-version" value="4.0.2" />
+  &lt;preference name="orientation" value="landscape" />
+&lt;/platform>
+					</code></pre>
+
+					</span>
+					<p class=fragment>Full compile logs</p>
+				</section>
+
+				<section>
+					<h2>Future</h2>
+					<p class=fragment>Site redesign</p>
+					<p class=fragment>Private plugin support (git and npm)</p>
+					<p class=fragment>Web hooks</p>
+					<p class=fragment>PhoneGap / Cordova CLI compatibility</p>
+				</section>
+
+				<section>
+					<h2>More Info</h2>
+					<p>website -- build.phonegap.com</p>
+					<p>docs -- docs.build.phonegap.com/</p>
+					<p>blog -- phonegap.com/blog/phonegap-build</p>
+					<p>issues -- github.com/phonegap/build</p>
+					<p>forums -- forums.adobe.com/community/phonegap/build</p>
+				</section>
+
 			</div>
 		</div>
 
@@ -36,6 +231,10 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+
+				controls: false,
+
+				progress: false,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
